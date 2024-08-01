@@ -1,0 +1,48 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #191414; */
+    background-color: #393636;
+    height: 1500px;
+    margin-left: 290px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid gray;
+    max-width: 250px;
+    margin: 1px 0;
+    margin-left: 20px;
+} 
+
+@media only screen and (max-width: 1000px) {
+    body {
+        margin-left: -70px;
+    }
+
+    hr {
+        max-width: 200px;
+        margin-left: 35px;
+    }
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+    z-index: 101;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#21d4fd, #b721ff);
+}
+
+
+/*  */

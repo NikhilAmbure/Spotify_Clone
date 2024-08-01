@@ -66,7 +66,7 @@
     <nav class="play-song">
 
         <div class="template-section">
-            <img src="{% static 'Songs-Template/1.png' %}" alt="" class="song-template">
+            <img src="{{firstsong.image}}" alt="" class="song-template">
             <div class="name" id="title">
                 <p class="song-name">Red Right Hand</p>
                 <p class="singer-name">Nick Cave & The Bad Seeds, Flood</p>
@@ -240,235 +240,29 @@
 
                     <div class="total-songs">
 
-                        <!-- Song - 1 -->
-                        <div class="new-songs-grid" id="1">
-                            <div class="song-number ss" id="1">
-                                <p>1</p>
+                        {% for s in songs %}
+                        <div class="new-songs-grid" id="{{ forloop.counter }}">
+                            <div class="song-number ss" id="{{ forloop.counter }}">
+                                <p>{{ forloop.counter }}</p>
                             </div>
                             <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/1.png' %}" alt="" class="song-img" id="1">
+                                <img src="{{ s.image.url }}" alt="" class="song-img" id="{{ forloop.counter }}">
                                 <div class="song-info">
-                                    <p class="t1">Red Right Hand</p>
-                                    <p class="sing-name">Nick Cave & The Bad Seeds, Flood</p>
+                                    <p class="t1">{{ s.title }}</p>
+                                    <p class="sing-name">{{ s.singer}}</p>
                                 </div>
                             </div>
                             <div class="song-album ss">
-                                <p>Theme from Peaky Blinders</p>
+                                <p>{{ s.album }}</p>
                             </div>
                             <div class="song-date ss">
-                                <p>Apr 04, 2024</p>
+                                <p>{{ s.added_at }}</p>
                             </div>
                             <div class="song-time ss">
-                                <p>6:21</p>
+                                <p>{{ s.length }}</p>
                             </div>
                         </div>
-
-                        <!-- Song - 2 -->
-                        <div class="new-songs-grid" id="2">
-                            <div class="song-number ss" id="2">
-                                <p>2</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/2.png' %}" alt="" class="song-img" id="2">
-                                <div class="song-info">
-                                    <p class="t1">Arcade</p>
-                                    <p class="sing-name">Duncan Laurence</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>Arcade</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 05, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>3:04</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 3 -->
-                        <div class="new-songs-grid" id="3">
-                            <div class="song-number ss" id="3">
-                                <p>3</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/3.png' %}" alt="" class="song-img" id="3">
-                                <div class="song-info">
-                                    <p class="t1">At My Worst (feat. Kehlani)</p>
-                                    <p class="sing-name">Pink Sweat$, Kehlani</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>At My Worst (feat. Kehlani)</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 05, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>2:49</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 4 -->
-                        <div class="new-songs-grid" id="4">
-                            <div class="song-number ss" id="4">
-                                <p>4</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/4.png' %}" alt="" class="song-img" id="4">
-                                <div class="song-info">
-                                    <p class="t1">Happier</p>
-                                    <p class="sing-name">Marshmello, Bastille</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>Happier</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 06, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>3:34</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 5 -->
-                        <div class="new-songs-grid" id="5">
-                            <div class="song-number ss" id="5">
-                                <p>5</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/5.png' %}" alt="" class="song-img" id="5">
-                                <div class="song-info">
-                                    <p class="t1">I Don't Care (with Justin Beiber)</p>
-                                    <p class="sing-name">Ed Sheeran & Justin Bieber</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>No.6 Collaborations Project</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 06, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>3:40</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 6 -->
-                        <div class="new-songs-grid" id="6">
-                            <div class="song-number ss" id="6">
-                                <p>6</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/6.png' %}" alt="" class="song-img" id="6">
-                                <div class="song-info">
-                                    <p class="t1">I'm an Albatraoz</p>
-                                    <p class="sing-name">AronChupa, Little Sis Nora</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>I'm an Albatraoz</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 06, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>2:47</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 7 -->
-                        <div class="new-songs-grid" id="7">
-                            <div class="song-number ss" id="7">
-                                <p>7</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/7.png' %}" alt="" class="song-img" id="7">
-                                <div class="song-info">
-                                    <p class="t1">MONTERO (Call me by your name)</p>
-                                    <p class="sing-name">Lil Nas X</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>MONTERO</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 07, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>2:18</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 8 -->
-                        <div class="new-songs-grid" id="8">
-                            <div class="song-number ss" id="8">
-                                <p>8</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/8.png' %}" alt="" class="song-img" id="8">
-                                <div class="song-info">
-                                    <p class="t1">Old Town Road</p>
-                                    <p class="sing-name">Lil Nas X</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>7 EP</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 07, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>1:53</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 9 -->
-                        <div class="new-songs-grid" id="9">
-                            <div class="song-number ss" id="9">
-                                <p>9</p>
-                            </div>
-                            <div class="song-title ss">
-                                <img src="{% static 'Songs-Template/9.png' %}" alt="" class="song-img" id="9">
-                                <div class="song-info">
-                                    <p class="t1">This Is what You Came For</p>
-                                    <p class="sing-name">Calvin Harris, Rihanna</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>This Is What You Came For</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 08, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>3:42</p>
-                            </div>
-                        </div>
-
-                        <!-- Song - 10 -->
-                        <div class="new-songs-grid" id="10">
-                            <div class="song-number ss" id="10">
-                                <p>10</p>
-                            </div>
-                            <div class="song-title ss" id="">
-                                <img src="{% static 'Songs-Template/10.png' %}" alt="" class="song-img" id="10">
-                                <div class="song-info">
-                                    <p class="t1">Treat You Better</p>
-                                    <p class="sing-name">Shawn Mendes</p>
-                                </div>
-                            </div>
-                            <div class="song-album ss">
-                                <p>IIIuminate</p>
-                            </div>
-                            <div class="song-date ss">
-                                <p>Apr 09, 2024</p>
-                            </div>
-                            <div class="song-time ss">
-                                <p>3:08</p>
-                            </div>
-                        </div>
+                        {% endfor %}
 
                     </div>
 
@@ -515,7 +309,7 @@
 
 
     <script type="text/JavaScript">
-        let static = '{% static '' %}'
+        const static = '{% static '' %}'
     </script>
     <script src="{% static 'JavaScript/playsong.js' %}"></script>
     <script src="{% static 'JavaScript/General.js' %}"></script>
